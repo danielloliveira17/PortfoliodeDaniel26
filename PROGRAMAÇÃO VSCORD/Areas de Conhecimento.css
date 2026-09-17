@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================================= */
+/* TÍTULO DA PÁGINA */
+/* ========================================================= */
+
+.area-main {
+    width: min(1280px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 90px 0 60px;
+}
+
+.area-titulo {
+    text-align: center;
+
+    margin-bottom: 45px;
+
+    animation: areaFade 0.8s ease both;
+}
+
+.area-kicker {
+    display: inline-block;
+
+    padding: 7px 18px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #e10600, #ff3b20);
+
+    border-radius: 30px;
+
+    box-shadow: 0 0 18px rgba(225, 6, 0, 0.35);
+}
+
+.area-titulo h1 {
+    margin-top: 20px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(28px, 4vw, 44px);
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+}
+
+.area-titulo h1::after {
+    content: "";
+
+    display: block;
+
+    width: 90px;
+
+    height: 3px;
+
+    margin: 18px auto 0;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 14px rgba(225, 6, 0, 0.60);
+}
+
+.area-titulo p {
+    margin-top: 12px;
+
+    font-size: clamp(16px, 2vw, 19px);
+
+    letter-spacing: 0.5px;
+
+    color: #cdd2d6;
+}
+
+
+/* ========================================================= */
+/* GRADE DE CARDS */
+/* ========================================================= */
+
+.area-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 26px;
+}
+
+
+/* ========================================================= */
+/* CARD */
+/* ========================================================= */
+
+.area-card {
+    position: relative;
+
+    display: block;
+
+    min-height: 320px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    background: #0b0b0f;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45);
+
+    isolation: isolate;
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    animation: areaRise 0.7s ease both;
+}
+
+.area-card:nth-child(1) { animation-delay: 0.05s; }
+.area-card:nth-child(2) { animation-delay: 0.12s; }
+.area-card:nth-child(3) { animation-delay: 0.19s; }
+.area-card:nth-child(4) { animation-delay: 0.26s; }
+.area-card:nth-child(5) { animation-delay: 0.33s; }
+
+.area-card img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+.area-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background: linear-gradient(
+        to top,
+        rgba(5, 6, 9, 0.96) 0%,
+        rgba(5, 6, 9, 0.55) 38%,
+        rgba(5, 6, 9, 0.12) 62%,
+        rgba(5, 6, 9, 0.35) 100%
+    );
+}
+
+.area-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    z-index: 2;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 16px rgba(225, 6, 0, 0.70);
+}
+
+
+/* ========================================================= */
+/* NÚMERO DO CARD */
+/* ========================================================= */
+
+.area-num {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    background: rgba(8, 8, 11, 0.72);
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50%;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 0 14px rgba(225, 6, 0, 0.35);
+}
+
+
+/* ========================================================= */
+/* INFORMAÇÕES DO CARD */
+/* ========================================================= */
+
+.area-info {
+    position: absolute;
+
+    left: 26px;
+    right: 26px;
+    bottom: 24px;
+
+    z-index: 3;
+
+    transition: transform 0.45s ease;
+}
+
+.area-tag {
+    display: inline-block;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: #ff5a3c;
+}
+
+.area-info h2 {
+    margin-top: 6px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(24px, 3vw, 34px);
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+}
+
+.area-bar {
+    display: block;
+
+    width: 52px;
+    height: 3px;
+
+    margin: 12px 0;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 12px rgba(225, 6, 0, 0.70);
+}
+
+.area-go {
+    display: inline-block;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* ========================================================= */
+/* HOVER */
+/* ========================================================= */
+
+.area-card:hover,
+.area-card:focus-visible {
+    transform: translateY(-8px);
+
+    border-color: rgba(225, 6, 0, 0.60);
+
+    box-shadow:
+        0 0 32px rgba(225, 6, 0, 0.22),
+        0 26px 55px rgba(0, 0, 0, 0.55);
+}
+
+.area-card:hover img {
+    transform: scale(1.07);
+}
+
+.area-card:hover .area-info {
+    transform: translateY(-4px);
+}
+
+.area-card:hover .area-go {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* ========================================================= */
+/* CARD LARGO (Senai) */
+/* ========================================================= */
+
+.area-card-largo {
+    grid-column: 1 / -1;
+
+    min-height: 360px;
+}
+
+.area-card-largo .area-info h2 {
+    font-size: clamp(30px, 4vw, 44px);
+}
+
+
+/* ========================================================= */
+/* ANIMAÇÕES */
+/* ========================================================= */
+
+@keyframes areaRise {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes areaFade {
+    from {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================================= */
+/* RESPONSIVO */
+/* ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .area-main {
+        width: calc(100% - 30px);
+
+        padding-top: 85px;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .area-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-card-largo {
+        grid-column: auto;
+    }
+
+    .area-card,
+    .area-card-largo {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .area-main {
+        width: calc(100% - 24px);
+
+        padding-top: 80px;
+    }
+
+    .area-card,
+    .area-card-largo {
+        min-height: 260px;
+    }
+
+    .area-num {
+        width: 44px;
+        height: 44px;
+
+        font-size: 16px;
+    }
+
+    .area-info {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+}

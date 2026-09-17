@@ -1,0 +1,643 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    background-image:
+        linear-gradient(
+            rgba(2, 7, 20, 0.72),
+            rgba(2, 7, 20, 0.82)
+        ),
+        url(img/bmw-m4-csl.jpg);
+
+    background-color: #020714;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+.center {
+    position: relative;
+
+    width: min(430px, 100%);
+
+    padding: 42px 45px;
+
+    background: linear-gradient(
+        165deg,
+        rgba(16, 10, 9, 0.96),
+        rgba(7, 6, 10, 0.94)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    animation: authRise 0.7s ease both;
+}
+
+.center::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(120deg, rgba(225, 6, 0, 0.12), transparent 45%),
+        radial-gradient(circle at 100% 0%, rgba(225, 6, 0, 0.20), transparent 60%);
+
+    opacity: 0;
+
+    transition: opacity 0.45s ease;
+}
+
+.center::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    z-index: 1;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 16px rgba(225, 6, 0, 0.70);
+}
+
+.center:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(225, 6, 0, 0.60);
+
+    box-shadow:
+        0 0 30px rgba(225, 6, 0, 0.20),
+        0 26px 55px rgba(0, 0, 0, 0.55);
+}
+
+.center:hover::before {
+    opacity: 1;
+}
+
+.center-kicker {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 18px;
+
+    padding: 7px 18px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #e10600, #ff3b20);
+
+    border-radius: 30px;
+
+    box-shadow: 0 0 18px rgba(225, 6, 0, 0.35);
+}
+
+.center h1 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 30px;
+
+    text-align: center;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(25px, 5vw, 30px);
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: #ffffff;
+
+    padding: 0;
+
+    border: none;
+
+    text-shadow:
+        0 0 10px rgba(225, 6, 0, 0.35);
+}
+
+.center h1::after {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+
+    height: 3px;
+
+    margin: 16px auto 0;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 12px rgba(225, 6, 0, 0.60);
+}
+
+form {
+    position: relative;
+
+    z-index: 2;
+}
+
+form .txt_field {
+    position: relative;
+
+    margin: 27px 0;
+
+    border-bottom: 1px solid #3a4047;
+
+    transition: 0.3s;
+}
+
+form .txt_field:focus-within {
+    border-bottom: 2px solid #e10600;
+
+    box-shadow:
+        0 5px 15px rgba(225, 6, 0, 0.08);
+}
+
+.txt_field input {
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 5px;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+}
+
+.txt_field label {
+    position: absolute;
+
+    top: 50%;
+    left: 5px;
+
+    transform: translateY(-50%);
+
+    color: #9aa3af;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #e10600;
+
+    letter-spacing: 1.5px;
+}
+
+.pass {
+    margin: 8px 0 25px;
+
+    text-align: right;
+
+    color: #9aa3af;
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.pass:hover {
+    color: #e10600;
+
+    text-decoration: underline;
+}
+
+.botoes {
+    display: flex;
+
+    gap: 15px;
+
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+.botoes input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-conectar {
+    border: 1px solid #e10600;
+
+    background: linear-gradient(
+        135deg,
+        #931200,
+        #e10600
+    );
+
+    color: #1d0402;
+
+    box-shadow:
+        0 0 15px rgba(225, 6, 0, 0.25);
+}
+
+.btn-conectar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 25px rgba(225, 6, 0, 0.45);
+}
+
+.btn-cancelar {
+    border: 1px solid #46546b;
+
+    background: rgba(25, 35, 55, 0.8);
+
+    color: #b7c2d3;
+}
+
+.btn-cancelar:hover {
+    border-color: #65758f;
+
+    background: rgba(40, 52, 75, 0.9);
+
+    transform: translateY(-2px);
+}
+
+.signup_link {
+    margin: 30px 0 0;
+
+    text-align: center;
+
+    color: #9aa3af;
+
+    font-size: 15px;
+
+    letter-spacing: 0.5px;
+}
+
+.signup_link a {
+    text-decoration: none;
+
+    color: #e10600;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.signup_link a:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 8px rgba(225, 6, 0, 0.6);
+
+    text-decoration: underline;
+}
+
+.erro {
+    text-align: center;
+}
+
+#mensagem {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 20px 0;
+
+    text-align: center;
+
+    color: #ff7b7b;
+
+    background: rgba(120, 20, 20, 0.2);
+
+    border: 1px solid rgba(255, 80, 80, 0.4);
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    overflow-wrap: anywhere;
+}
+
+.texto-erro {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #ffffff;
+}
+
+.texto-ajuda {
+    font-size: 15px;
+
+    color: #9aa3af;
+
+    margin-bottom: 30px;
+}
+
+.senha-field {
+    position: relative;
+}
+
+.olho {
+    position: absolute;
+
+    right: 5px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9aa3af;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    user-select: none;
+}
+
+.olho:hover {
+    color: #e10600;
+
+    text-shadow:
+        0 0 8px rgba(225, 6, 0, 0.6);
+}
+
+.senha-field input {
+    padding-right: 35px;
+}
+
+@keyframes authRise {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .center {
+        width: min(430px, 100%);
+        padding: 35px 35px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    .center {
+        width: min(420px, 100%);
+
+        padding: 35px 30px;
+    }
+
+    .center h1 {
+        font-size: 27px;
+    }
+
+    .botoes {
+        gap: 12px;
+    }
+
+    .botoes input {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .center {
+        width: 100%;
+
+        padding: 30px 22px;
+
+        border-radius: 16px;
+    }
+
+    .center h1 {
+        margin-bottom: 30px;
+
+        font-size: 24px;
+
+        letter-spacing: 2px;
+    }
+
+    form .txt_field {
+        margin: 24px 0;
+    }
+
+    .txt_field input {
+        height: 43px;
+
+        font-size: 17px;
+    }
+
+    .txt_field label {
+        font-size: 16px;
+    }
+
+    .pass {
+        font-size: 13px;
+    }
+
+    .botoes {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .botoes input {
+        width: 100%;
+
+        min-height: 50px;
+    }
+
+    .signup_link {
+        margin-top: 25px;
+
+        font-size: 14px;
+    }
+
+    .texto-erro {
+        font-size: 18px;
+    }
+
+    .texto-ajuda {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .center {
+        padding: 25px 18px;
+
+        border-radius: 14px;
+    }
+
+    .center h1 {
+        font-size: 22px;
+
+        letter-spacing: 1.5px;
+    }
+
+    form .txt_field {
+        margin: 22px 0;
+    }
+
+    .txt_field input {
+        font-size: 16px;
+    }
+
+    .txt_field label {
+        font-size: 15px;
+    }
+
+    .botoes input {
+        height: 48px;
+
+        font-size: 16px;
+    }
+
+    .signup_link {
+        font-size: 13px;
+    }
+
+    .olho {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="racing.css">
+    <link rel="icon" href="img/sesi senai icon.png" type="image/x-icon">
+
+    <title>Contatos</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .contato-box {
+            width: min(480px, calc(100% - 40px));
+            padding: 45px 40px;
+            text-align: center;
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(145deg, rgba(14, 8, 8, 0.94), rgba(5, 6, 9, 0.90));
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-left: 3px solid #e10600;
+            border-radius: 10px;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 0 24px rgba(225, 6, 0, 0.14), 0 22px 50px rgba(0, 0, 0, 0.60);
+        }
+
+        .contato-box h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-size: clamp(26px, 4vw, 34px);
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .contato-box h1::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            margin: 16px auto 0;
+            background: #e10600;
+            box-shadow: 0 0 12px rgba(225, 6, 0, 0.60);
+        }
+
+        .contato-box p {
+            font-size: clamp(17px, 2vw, 20px);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #f0f1f3;
+            line-height: 1.7;
+        }
+
+        .contato-box p strong {
+            color: #ff3b20;
+        }
+    </style>
+
+    <div class="page-transition"></div>
+
+    <section class="contato-box">
+        <h1>Contatos</h1>
+        <p><strong>Telefone:</strong> (89) 99988-0300</p>
+        <p><strong>E-mail:</strong> danieltrabalhoescolar16@gmail.com</p>
+        <p><strong>Instagram:</strong> danieel.08</p>
+    </section>
+
+    <script src="transicao.js"></script>
+
+</body>
+
+</html>

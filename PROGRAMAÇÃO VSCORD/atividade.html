@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="img/sesi senai icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="racing.css">
+
+    <title>Atividade</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+
+            font-family: 'Rajdhani', sans-serif;
+
+            color: #ffffff;
+
+            overflow-x: hidden;
+        }
+
+        .viewer {
+            width: min(1400px, calc(100% - 40px));
+
+            margin: 0 auto;
+
+            padding: 95px 0 60px;
+        }
+
+        .viewer-strip {
+            width: min(900px, 100%);
+
+            height: 10px;
+
+            margin: 0 auto 18px;
+
+            border-radius: 8px 8px 0 0;
+
+            background: repeating-conic-gradient(#14161a 0% 25%, #e10600 0% 50%);
+
+            background-size: 12px 12px;
+
+            border: 1px solid rgba(255, 255, 255, 0.10);
+
+            border-bottom: none;
+
+            box-shadow: 0 0 18px rgba(225, 6, 0, 0.30);
+        }
+
+        .viewer-card {
+            position: relative;
+
+            width: min(1400px, 100%);
+
+            padding: 16px;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            background: linear-gradient(
+                165deg,
+                rgba(16, 10, 9, 0.96),
+                rgba(7, 6, 10, 0.94)
+            );
+
+            border: 1px solid rgba(255, 255, 255, 0.10);
+
+            box-shadow:
+                0 24px 55px rgba(0, 0, 0, 0.50);
+
+            animation: atvFade 0.7s ease both;
+        }
+
+        .viewer-card::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 4px;
+
+            background: linear-gradient(90deg, #e10600, #ff3b20);
+
+            box-shadow: 0 0 16px rgba(225, 6, 0, 0.70);
+        }
+
+        .viewer-card img {
+            display: block;
+
+            width: 100%;
+
+            max-height: 76vh;
+
+            object-fit: contain;
+
+            border-radius: 12px;
+
+            background: #0a0a0d;
+        }
+
+        @keyframes atvFade {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 760px) {
+            .viewer {
+                width: calc(100% - 24px);
+
+                padding-top: 85px;
+            }
+
+            .viewer-card img {
+                max-height: 70vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-transition"></div>
+
+    <a id="btn-voltar" class="voltar page-link" href="areas de conhecimento.html">← Voltar</a>
+
+    <main class="viewer">
+
+        <div class="viewer-strip"></div>
+
+        <div class="viewer-card">
+            <img id="atividade-img" src="" alt="Atividade">
+        </div>
+
+    </main>
+
+<script>
+    var params = new URLSearchParams(window.location.search);
+    var imagem = params.get("imagem");
+    var voltar = params.get("voltar");
+
+    if (imagem) {
+        document.getElementById("atividade-img").src = imagem;
+        document.getElementById("atividade-img").alt = imagem;
+    }
+
+    if (voltar) {
+        document.getElementById("btn-voltar").href = voltar;
+    }
+</script>
+
+<script src="transicao.js"></script>
+
+</body>
+
+</html>

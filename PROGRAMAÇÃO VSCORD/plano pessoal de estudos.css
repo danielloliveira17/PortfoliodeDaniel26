@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+.ppe-main {
+    width: min(1200px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 90px 0 60px;
+}
+
+.ppe-titulo {
+    text-align: center;
+
+    margin-bottom: 45px;
+
+    animation: ppeFade 0.8s ease both;
+}
+
+.ppe-kicker {
+    display: inline-block;
+
+    padding: 7px 18px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    background: linear-gradient(135deg, #e10600, #ff3b20);
+
+    border-radius: 30px;
+
+    box-shadow: 0 0 18px rgba(225, 6, 0, 0.35);
+}
+
+.ppe-titulo h1 {
+    margin-top: 20px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(28px, 4vw, 42px);
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+}
+
+.ppe-titulo h1::after {
+    content: "";
+
+    display: block;
+
+    width: 90px;
+
+    height: 3px;
+
+    margin: 18px auto 0;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 14px rgba(225, 6, 0, 0.60);
+}
+
+.ppe-titulo p {
+    margin-top: 12px;
+
+    font-size: clamp(16px, 2vw, 19px);
+
+    letter-spacing: 0.5px;
+
+    color: #cdd2d6;
+}
+
+.ppe-card {
+    position: relative;
+
+    width: min(820px, 100%);
+
+    margin: 0 auto 45px;
+
+    padding: 32px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        165deg,
+        rgba(16, 10, 9, 0.96),
+        rgba(7, 6, 10, 0.94)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45);
+
+    isolation: isolate;
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    animation: ppeRise 0.7s ease both;
+}
+
+.ppe-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(120deg, rgba(225, 6, 0, 0.12), transparent 45%),
+        radial-gradient(circle at 100% 0%, rgba(225, 6, 0, 0.20), transparent 60%);
+
+    opacity: 0;
+
+    transition: opacity 0.45s ease;
+}
+
+.ppe-card::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    z-index: 1;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 16px rgba(225, 6, 0, 0.70);
+}
+
+.ppe-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(225, 6, 0, 0.60);
+
+    box-shadow:
+        0 0 30px rgba(225, 6, 0, 0.20),
+        0 26px 55px rgba(0, 0, 0, 0.55);
+}
+
+.ppe-card:hover::before {
+    opacity: 1;
+}
+
+.ppe-num {
+    position: absolute;
+
+    top: 24px;
+    right: 24px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    background: rgba(8, 8, 11, 0.72);
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50%;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 0 14px rgba(225, 6, 0, 0.35);
+}
+
+.ppe-label {
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    color: #ff5a3c;
+
+    border: 1px solid rgba(225, 6, 0, 0.55);
+
+    border-radius: 30px;
+}
+
+.ppe-info {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 20px;
+}
+
+.ppe-info h2 {
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(22px, 2.5vw, 30px);
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    transition: color 0.4s ease;
+}
+
+.ppe-bar {
+    display: block;
+
+    width: 52px;
+    height: 3px;
+
+    margin: 16px 0;
+
+    background: linear-gradient(90deg, #e10600, #ff3b20);
+
+    box-shadow: 0 0 12px rgba(225, 6, 0, 0.70);
+}
+
+.ppe-info p {
+    font-size: clamp(18px, 2vw, 21px);
+
+    line-height: 1.6;
+
+    color: #f0f1f3;
+}
+
+.tabela-container {
+    width: 100%;
+
+    padding: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    overflow-x: auto;
+}
+
+table {
+    width: min(1100px, 100%);
+
+    min-width: 720px;
+
+    border-collapse: collapse;
+
+    margin: 0 auto;
+
+    color: #eef0f2;
+
+    background: linear-gradient(
+        165deg,
+        rgba(14, 9, 9, 0.97),
+        rgba(7, 6, 10, 0.95)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: clamp(15px, 2vw, 18px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.45);
+
+    animation: ppeRise 0.7s ease 0.15s both;
+}
+
+th,
+td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+    padding: 20px 16px;
+
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+tr > th:last-child,
+tr > td:last-child {
+    border-right: none;
+}
+
+th {
+    background: linear-gradient(135deg, #e10600, #ff3b20);
+
+    color: #ffffff;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(14px, 2vw, 19px);
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+td {
+    color: #e6e8ea;
+
+    background-color: rgba(10, 7, 8, 0.55);
+}
+
+tbody tr, tr {
+    transition: background-color 0.3s ease;
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(30, 14, 12, 0.45);
+}
+
+tr:hover td {
+    background-color: rgba(225, 6, 0, 0.12);
+
+    color: #ffffff;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td:first-child {
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(13px, 1.6vw, 16px);
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    color: #ff5a3c;
+
+    background-color: rgba(20, 11, 9, 0.75);
+}
+
+@keyframes ppeRise {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ppeFade {
+    from {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .ppe-main {
+        width: calc(100% - 30px);
+
+        padding-top: 85px;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .ppe-main {
+        width: calc(100% - 24px);
+
+        padding-top: 85px;
+    }
+
+    .ppe-card {
+        padding: 26px;
+    }
+
+    .tabela-container {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .ppe-main {
+        padding-top: 80px;
+    }
+
+    .ppe-card {
+        padding: 22px;
+    }
+
+    .ppe-num {
+        width: 44px;
+        height: 44px;
+
+        font-size: 16px;
+    }
+}
