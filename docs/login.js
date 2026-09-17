@@ -22,7 +22,7 @@ function logar() {
 
             alert(data.message);
 
-            window.location.href = "index.html";
+            window.location.href = "home.html";
 
         } else {
 
