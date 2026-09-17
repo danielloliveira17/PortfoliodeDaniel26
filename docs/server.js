@@ -5,12 +5,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const db = mysql.createConnection({
-    host: "127.0.0.1",
-    user: "root",
-    password: "",
-    database: "portfolio"
+    host: process.env.MYSQLHOST || "127.0.0.1",
+    port: process.env.MYSQLPORT || 3306,
+    user: process.env.MYSQLUSER || "root",
+    password: process.env.MYSQLPASSWORD || "",
+    database: process.env.MYSQLDATABASE || "portfolio"
 });
-
 db.connect((err) => {
     if (err) {
         console.error("Erro ao conectar ao MySQL:", err.message);
@@ -113,6 +113,8 @@ app.post("/api/cadastro", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Servidor rodando em http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });
