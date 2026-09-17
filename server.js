@@ -1,1 +1,1 @@
-require("./PROGRAMAÇÃO VSCORD/server.js");
+require('./docs/server.js');
