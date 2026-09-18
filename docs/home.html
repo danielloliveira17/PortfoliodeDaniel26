@@ -16,7 +16,7 @@
 
     <div class="page-transition"></div>
 
-    <a href="login.html" class="voltar page-link">← Voltar</a>
+    <a href="#" id="sair" class="voltar">Sair</a>
 
     <nav class="main-nav">
 
@@ -105,6 +105,8 @@
                     <div class="title-detail"></div>
 
                     <h2>Daniel Luz Oliveira</h2>
+
+                    <h3 id="saudacao" style="margin:0; font-family:'Rajdhani',sans-serif; font-size:clamp(18px,2.2vw,24px); font-weight:600; letter-spacing:2px; color:#e10600; text-transform:uppercase;"></h3>
 
                 </div>
 
@@ -273,6 +275,10 @@
     </main>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="supabase-config.js"></script>
+    <script src="auth-check.js"></script>
+    <script src="home.js"></script>
     <script src="portfolio.js"></script>
 
     <script>

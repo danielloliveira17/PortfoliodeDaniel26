@@ -6,42 +6,54 @@ function cadastrar() {
     const confirmarSenha = document.getElementById("confirmarSenha").value;
 
     if (senha !== confirmarSenha) {
+
         alert("As senhas não são iguais!");
+
         return;
     }
 
-    fetch("http://localhost:3000/api/cadastro", {
-        method: "POST",
+    if (!window.supabaseClient) {
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+        alert("Configuração do Supabase ausente.");
 
-        body: JSON.stringify({
-            nome: nome,
-            email: email,
-            senha: senha
-        })
+        return;
+    }
+
+    window.supabaseClient.auth.signUp({
+
+        email: email,
+        password: senha,
+
+        options: {
+            data: {
+                nome: nome
+            }
+        }
     })
+    .then(({ data, error }) => {
 
-    .then(response => response.json())
+        if (error) {
 
-    .then(data => {
+            console.error("Erro:", error.message);
 
-        if (data.success) {
+            alert(mensagemErroCadastro(error));
 
-            alert(data.message);
+            return;
+        }
 
-            // Volta para o login
-            window.location.href = "login.html";
+        if (data.session) {
+
+            alert("Cadastro realizado com sucesso!");
+
+            window.location.href = "home.html";
 
         } else {
 
-            alert(data.message);
+            alert("Cadastro realizado! Confirme seu e-mail para ativar a conta.");
+
+            window.location.href = "index.html";
         }
-
     })
-
     .catch(error => {
 
         console.error("Erro:", error);
@@ -51,11 +63,23 @@ function cadastrar() {
 }
 
 
+function mensagemErroCadastro(error) {
+
+    if (error.code === "user_already_exists") {
+
+        return "Este e-mail já está cadastrado!";
+    }
+
+    return "Não foi possível realizar o cadastro. Tente novamente.";
+}
+
+
 function voltarLogin() {
 
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 
 }
+
 
 function mostrarSenha(id, elemento) {
 
