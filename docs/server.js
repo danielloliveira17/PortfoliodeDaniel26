@@ -11,21 +11,22 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: process.env.MYSQLHOST || "127.0.0.1",
     port: process.env.MYSQLPORT || 3306,
     user: process.env.MYSQLUSER || "root",
     password: process.env.MYSQLPASSWORD || "",
-    database: process.env.MYSQLDATABASE || "portfolio"
-});
-db.connect((err) => {
-    if (err) {
-        console.error("Erro ao conectar ao MySQL:", err.message);
-        return;
-    }
+    database: process.env.MYSQLDATABASE || "portfolio",
 
-    console.log("Conectado ao MySQL com sucesso!");
+    waitForConnections: true,
+    connectionLimit: 10,
+    maxIdle: 5,
+    idleTimeout: 60000,
+    enableKeepAlive: true,
+    keepAliveInitialDelay: 0
 });
+
+console.log("Pool do MySQL configurado com sucesso!");
 
 app.post("/api/login", (req, res) => {
 
