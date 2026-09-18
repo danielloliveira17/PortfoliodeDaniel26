@@ -2,7 +2,14 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+    origin: "https://danielloliveira17.github.io",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"]
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 const db = mysql.createConnection({
     host: process.env.MYSQLHOST || "127.0.0.1",
