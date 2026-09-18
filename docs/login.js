@@ -3,7 +3,7 @@ function logar() {
     const login = document.getElementById("login").value;
     const senha = document.getElementById("senha").value;
 
-    fetch("http://localhost:3000/api/login", {
+     fetch("https://portfoliodaniel26-production.up.railway.app/api/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
