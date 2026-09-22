@@ -29,7 +29,7 @@ document.querySelectorAll(".page-link").forEach(function (link) {
 
             window.location.href = destino;
 
-        }, 550);
+        }, 740);
 
     });
 

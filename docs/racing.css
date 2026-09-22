@@ -31,23 +31,96 @@ body {
 
     z-index: 9999;
 
-    background-size: 22px 22px, cover;
-
-    background-image:
-        repeating-conic-gradient(#0d0d10 0% 25%, #e10600 0% 50%),
-        linear-gradient(135deg, #0a0a0d, #050507);
-
-    box-shadow: inset 0 0 90px rgba(225, 6, 0, 0.30);
-
-    transform: translateX(-100%);
+    overflow: hidden;
 
     pointer-events: none;
 
-    transition: transform 0.55s cubic-bezier(0.77, 0, 0.18, 1);
+    background:
+        radial-gradient(circle at 80% 45%, rgba(225, 6, 0, 0.20), transparent 55%),
+        linear-gradient(135deg, #0a0a0d, #050507);
+
+    transform: translateX(-100%);
+
+    transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.page-transition::before {
+    content: "";
+
+    position: absolute;
+
+    top: -5%;
+    right: 0;
+
+    width: 60%;
+    height: 110%;
+
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 480'><defs><filter id='g' x='-60%' y='-60%' width='220%' height='220%'><feGaussianBlur stdDeviation='5' result='b'/><feMerge><feMergeNode in='b'/><feMergeNode in='SourceGraphic'/></feMerge></filter></defs><polygon filter='url(%23g)' fill='%23e10600' stroke='%23ff5a3c' stroke-width='1.5' points='150,10 58,240 103,240 80,470 172,158 118,158 161,10'/></svg>");
+
+    background-repeat: no-repeat;
+
+    background-size: contain;
+
+    background-position: center right;
+
+    opacity: 0;
+
+    filter: drop-shadow(0 0 20px rgba(255, 59, 32, 0.95)) drop-shadow(0 0 55px rgba(225, 6, 0, 0.65));
+
+    transform: translateX(18%);
+}
+
+.page-transition::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 78% 45%, rgba(255, 59, 32, 0.55), transparent 42%),
+        radial-gradient(circle at 55% 85%, rgba(225, 6, 0, 0.35), transparent 40%);
+
+    mix-blend-mode: screen;
+
+    opacity: 0;
 }
 
 .page-exit .page-transition {
     transform: translateX(0);
+}
+
+.page-exit .page-transition::before {
+    animation: raio-bolt 0.72s ease-out forwards;
+}
+
+.page-exit .page-transition::after {
+    animation: raio-flash 0.72s linear forwards;
+}
+
+@keyframes raio-bolt {
+    0%   { opacity: 0; transform: translateX(18%) scale(0.9); }
+    6%   { opacity: 1; }
+    9%   { opacity: 0.1; }
+    12%  { opacity: 1; }
+    15%  { opacity: 0.25; }
+    20%  { opacity: 1; }
+    26%  { opacity: 0.4; }
+    34%  { opacity: 1; }
+    46%  { opacity: 0.65; transform: translateX(4%) scale(1); }
+    70%  { opacity: 0.9; transform: translateX(-8%) scale(1.04); }
+    100% { opacity: 0.95; transform: translateX(-14%) scale(1.08); }
+}
+
+@keyframes raio-flash {
+    0%   { opacity: 0; }
+    6%   { opacity: 0.9; }
+    10%  { opacity: 0.15; }
+    14%  { opacity: 0.7; }
+    20%  { opacity: 0.1; }
+    30%  { opacity: 0.5; }
+    55%  { opacity: 0.25; }
+    100% { opacity: 0.35; }
 }
 
 body {
