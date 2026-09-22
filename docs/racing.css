@@ -221,3 +221,108 @@ input[type="submit"].btn-cadastrar:hover {
 
     color: #ffffff;
 }
+
+.clock-container {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 2800;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.digital-clock {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    background:
+        rgba(3, 7, 12, 0.78);
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    border-radius: 4px;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.25);
+}
+
+.digital-clock::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 2px;
+    height: 100%;
+
+    background: #e10600;
+
+    box-shadow:
+        0 0 9px rgba(225,6,0,0.65);
+}
+
+.digital-clock span {
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: clamp(14px, 1.5vw, 18px);
+
+    color: #ffffff;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.18);
+}
+
+.digital-clock span:not(:last-child)::after {
+    content: ":";
+
+    margin-left: 8px;
+
+    color: #e10600;
+}
+
+@media (max-width: 800px) {
+
+    .clock-container {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .clock-container {
+        top: 10px;
+        right: 10px;
+    }
+
+    .digital-clock {
+        padding: 8px 10px;
+
+        gap: 5px;
+    }
+
+    .digital-clock span {
+        font-size: 11px;
+    }
+
+    .digital-clock span:not(:last-child)::after {
+        margin-left: 5px;
+    }
+}
