@@ -23,7 +23,7 @@ const db = mysql.createPool({
     database: process.env.MYSQLDATABASE || "portfolio",
 
     waitForConnections: true,
-    connectionLimit: 10,
+    connectionLimit: 10,                    
     maxIdle: 5,
     idleTimeout: 60000,
     enableKeepAlive: true,
