@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="curriculo.css">
+    <link rel="icon" href="img/sesi senai icon.png" type="image/x-icon">
+
+    <title>Minha História de Vida | Daniel Luz Oliveira</title>
+</head>
+
+<body class="curriculo-body">
+
+    <div class="clock-container">
+
+        <div class="digital-clock">
+            <span id="hours">00</span>
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+        </div>
+
+    </div>
+
+    <div class="curriculo-actions">
+
+        <a href="home.html" class="cv-action cv-back">
+            ← Voltar ao Portfólio
+        </a>
+
+        <button
+            type="button"
+            class="cv-action cv-print"
+            onclick="window.print()">
+            Imprimir / Salvar PDF
+        </button>
+
+    </div>
+    <main class="curriculo-folha">
+
+        <header class="cv-header">
+
+            <span class="cv-eyebrow">
+                MINHA TRAJETÓRIA
+            </span>
+
+            <h1>MINHA HISTÓRIA DE VIDA</h1>
+
+            <p class="cv-subtitle">
+                Conhecendo um pouco mais sobre Daniel Luz Oliveira
+            </p>
+
+            <div class="cv-header-line"></div>
+
+        </header>
+
+        <section class="cv-section">
+
+            <h2>Minha Infância</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE SUA INFÂNCIA, ONDE NASCEU,
+                COMO FOI SUA CRIAÇÃO E SUAS PRIMEIRAS EXPERIÊNCIAS.
+            </p>
+
+        </section>
+        <section class="cv-section">
+
+            <h2>Minha Família</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE SUA FAMÍLIA, AS PESSOAS
+                IMPORTANTES NA SUA VIDA E COMO ELAS CONTRIBUÍRAM
+                PARA SUA FORMAÇÃO.
+            </p>
+
+        </section>
+        <section class="cv-section">
+
+            <h2>Minha Trajetória Escolar</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE SUA VIDA ESCOLAR, AS ESCOLAS
+                ONDE ESTUDOU, AS EXPERIÊNCIAS QUE VIVENCIOU E
+                SUA CAMINHADA ATÉ O ENSINO MÉDIO.
+            </p>
+
+        </section>
+        <section class="cv-section">
+
+            <h2>Experiências e Aprendizados</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE OS MOMENTOS MARCANTES DA SUA VIDA,
+                AS DIFICULDADES QUE ENFRENTOU, AS CONQUISTAS QUE TEVE
+                E O QUE APRENDEU COM CADA EXPERIÊNCIA.
+            </p>
+
+        </section>
+        <section class="cv-section">
+
+            <h2>Minha Vida Atualmente</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE COMO É SUA VIDA ATUALMENTE,
+                SEUS ESTUDOS, SEUS INTERESSES, SUA ROTINA E
+                O QUE ESTÁ FAZENDO PARA CONSTRUIR SEU FUTURO.
+            </p>
+
+        </section>
+
+        <section class="cv-section">
+
+            <h2>Meus Sonhos e Objetivos</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE SEUS SONHOS, SEUS PLANOS PARA
+                O FUTURO, SUA PROFISSÃO DESEJADA E TUDO AQUILO
+                QUE DESEJA CONQUISTAR AO LONGO DA VIDA.
+            </p>
+
+        </section>
+
+        <footer class="cv-footer">
+
+            <span>Daniel Luz Oliveira</span>
+
+            <span>Minha História de Vida • 2026</span>
+
+        </footer>
+
+    </main>
+
+    <script>
+
+        function atualizarRelogio() {
+
+            const agora = new Date();
+
+            document.getElementById("hours").textContent =
+                String(agora.getHours()).padStart(2, "0");
+
+            document.getElementById("minutes").textContent =
+                String(agora.getMinutes()).padStart(2, "0");
+
+            document.getElementById("seconds").textContent =
+                String(agora.getSeconds()).padStart(2, "0");
+
+        }
+
+        atualizarRelogio();
+
+        setInterval(atualizarRelogio, 1000);
+
+    </script>
+
+</body>
+</html>
