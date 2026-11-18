@@ -14,6 +14,16 @@
 </head>
 
 <body class="curriculo-body">
+    <!-- RELÓGIO DIGITAL -->
+<div class="clock-container">
+
+    <div class="digital-clock">
+        <span id="hours">00</span>
+        <span id="minutes">00</span>
+        <span id="seconds">00</span>
+    </div>
+
+</div>
 
     <div class="curriculo-actions">
 
@@ -192,6 +202,28 @@
         </footer>
 
     </main>
+    <script>
+
+    function atualizarRelogio() {
+
+        const agora = new Date();
+
+        document.getElementById("hours").textContent =
+            String(agora.getHours()).padStart(2, "0");
+
+        document.getElementById("minutes").textContent =
+            String(agora.getMinutes()).padStart(2, "0");
+
+        document.getElementById("seconds").textContent =
+            String(agora.getSeconds()).padStart(2, "0");
+
+    }
+
+    atualizarRelogio();
+
+    setInterval(atualizarRelogio, 1000);
+
+</script>
 
 </body>
 </html>

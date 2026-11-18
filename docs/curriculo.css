@@ -326,10 +326,10 @@
         background: #ffffff !important;
         color: #252d38 !important;
     }
-
-    .curriculo-actions {
-        display: none !important;
-    }
+.curriculo-actions,
+.clock-container {
+    display: none !important;
+}
 
     .curriculo-folha {
         width: 100%;
