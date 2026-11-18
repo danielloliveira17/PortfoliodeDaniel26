@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="curriculo.css">
+    <link rel="icon" href="img/sesi senai icon.png" type="image/x-icon">
+    <title>Considerações Finais | Daniel Luz Oliveira</title>
+</head>
+<body class="curriculo-body">
+
+    <div class="clock-container">
+
+        <div class="digital-clock">
+            <span id="hours">00</span>
+            <span id="minutes">00</span>
+            <span id="seconds">00</span>
+        </div>
+
+    </div>
+
+    <div class="curriculo-actions">
+
+        <a href="home.html" class="cv-action cv-back">
+            ← Voltar ao Portfólio
+        </a>
+
+        <button
+            type="button"
+            class="cv-action cv-print"
+            onclick="window.print()">
+            Imprimir / Salvar PDF
+        </button>
+
+    </div>
+
+    <main class="curriculo-folha">
+
+   
+        <header class="cv-header">
+
+            <span class="cv-eyebrow">
+                ENCERRAMENTO DO ANO LETIVO
+            </span>
+
+            <h1>CONSIDERAÇÕES FINAIS</h1>
+
+            <p class="cv-subtitle">
+                Reflexões e experiências vivenciadas durante o ano letivo de 2026
+            </p>
+
+            <div class="cv-header-line"></div>
+
+        </header>
+        <section class="cv-section">
+
+            <h2>Uma Retrospectiva do Ano</h2>
+
+            <p>
+                ESCREVA AQUI UMA INTRODUÇÃO SOBRE COMO FOI SEU ANO
+                LETIVO DE 2026, SUAS EXPECTATIVAS NO INÍCIO DO ANO
+                E COMO VOCÊ SE SENTE AO CHEGAR AO FINAL DESTA ETAPA.
+            </p>
+
+        </section>
+
+        <section class="cv-section">
+
+            <h2>Aprendizados e Conhecimentos</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE TUDO O QUE APRENDEU DURANTE O ANO,
+                TANTO NAS DISCIPLINAS DO ENSINO MÉDIO QUANTO NO CURSO
+                TÉCNICO DE INFORMÁTICA PARA INTERNET.
+            </p>
+
+        </section>
+
+        <section class="cv-section">
+
+            <h2>Desafios e Superações</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE AS DIFICULDADES QUE ENFRENTOU,
+                OS MOMENTOS COMPLICADOS, AS SITUAÇÕES QUE EXIGIRAM
+                MAIS ESFORÇO E COMO CONSEGUIU SUPERÁ-LAS.
+            </p>
+
+        </section>
+
+        <section class="cv-section">
+
+            <h2>Experiências Marcantes</h2>
+
+            <p>
+                ESCREVA AQUI SOBRE OS MOMENTOS MAIS IMPORTANTES
+                QUE VIVEU DURANTE O ANO, PROJETOS DESENVOLVIDOS,
+                ATIVIDADES, EVENTOS, AMIZADES E EXPERIÊNCIAS
+                QUE FIZERAM DIFERENÇA NA SUA TRAJETÓRIA.
+            </p>
+
+        </section>
+
+        <section class="cv-section">
+
+            <h2>Agradecimentos</h2>
+
+            <p>
+                ESCREVA AQUI SEUS AGRADECIMENTOS AOS PROFESSORES,
+                COLEGAS, FAMILIARES E A TODAS AS PESSOAS QUE
+                CONTRIBUÍRAM DE ALGUMA FORMA PARA SUA FORMAÇÃO
+                E SEU CRESCIMENTO AO LONGO DESTE ANO.
+            </p>
+
+        </section>
+
+        <section class="cv-section">
+
+            <h2>Mensagem Final</h2>
+
+            <p>
+                ESCREVA AQUI SUA REFLEXÃO FINAL SOBRE O ANO LETIVO.
+                FALE SOBRE O QUE LEVA DESTA EXPERIÊNCIA, O QUE
+                MUDOU EM VOCÊ E QUAIS SÃO SUAS EXPECTATIVAS
+                PARA OS PRÓXIMOS DESAFIOS E CONQUISTAS.
+            </p>
+
+        </section>
+
+        <footer class="cv-footer">
+
+            <span>Daniel Luz Oliveira</span>
+
+            <span>Considerações Finais • 2026</span>
+
+        </footer>
+
+    </main>
+
+    <script>
+
+        function atualizarRelogio() {
+
+            const agora = new Date();
+
+            document.getElementById("hours").textContent =
+                String(agora.getHours()).padStart(2, "0");
+
+            document.getElementById("minutes").textContent =
+                String(agora.getMinutes()).padStart(2, "0");
+
+            document.getElementById("seconds").textContent =
+                String(agora.getSeconds()).padStart(2, "0");
+
+        }
+
+        atualizarRelogio();
+
+        setInterval(atualizarRelogio, 1000);
+
+    </script>
+
+</body>
+</html>

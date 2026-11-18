@@ -332,7 +332,8 @@ a {
 .conhecimento,
 .anexos,
 .curriculo,
-.historia {
+.historia,
+.consideracoes {
     position: relative;
 
     z-index: 2;
