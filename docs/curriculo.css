@@ -1,0 +1,363 @@
+
+.curriculo-body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 20px 50px;
+
+    background-color: #05070a;
+    background-image:
+        linear-gradient(
+            rgba(2, 4, 8, 0.90),
+            rgba(2, 4, 8, 0.90)
+        ),
+        url("img/bmw-m4-csl.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: 'Rajdhani', sans-serif;
+    color: #ffffff;
+}
+
+.curriculo-actions {
+    width: min(900px, 100%);
+    margin: 0 auto 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.cv-action {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 11px 20px;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    color: #ffffff;
+    background: rgba(5, 8, 13, 0.90);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 4px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.cv-back {
+    border-bottom: 2px solid #e10600;
+}
+
+.cv-print {
+    background: #e10600;
+    border: 1px solid #e10600;
+}
+
+.cv-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 18px rgba(225, 6, 0, 0.25);
+}
+
+.cv-print:hover {
+    background: #b90000;
+    border-color: #b90000;
+}
+
+.curriculo-folha {
+    width: min(900px, 100%);
+    min-height: 1050px;
+
+    margin: 0 auto;
+    padding: 55px 65px;
+
+    background: #ffffff;
+    color: #252d38;
+
+    border-top: 5px solid #e10600;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+.cv-header {
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #d8dce2;
+}
+
+.cv-eyebrow {
+    display: block;
+    margin-bottom: 10px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    color: #e10600;
+}
+
+.cv-header h1 {
+    margin: 0;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(23px, 4vw, 34px);
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    color: #111c2b;
+}
+
+.cv-subtitle {
+    margin-top: 10px;
+
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    color: #566171;
+}
+
+.cv-header-line {
+    width: 75px;
+    height: 3px;
+    margin-top: 18px;
+
+    background: #e10600;
+}
+
+.cv-section {
+    margin-bottom: 27px;
+}
+
+.cv-section h2 {
+    position: relative;
+
+    margin-bottom: 15px;
+    padding-bottom: 9px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #15243a;
+
+    border-bottom: 1px solid #dce0e5;
+}
+
+.cv-section h2::after {
+    content: "";
+
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+
+    width: 55px;
+    height: 2px;
+
+    background: #e10600;
+}
+
+.cv-section p {
+    margin-bottom: 9px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: #3e4855;
+}
+
+.cv-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 25px;
+}
+
+.cv-contact-grid p {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.cv-contact-grid strong {
+    color: #17243a;
+}
+
+.cv-contact-grid a {
+    color: #45536a;
+    text-decoration: none;
+}
+
+.cv-contact-grid a:hover {
+    color: #e10600;
+}
+
+
+.cv-item {
+    margin-bottom: 17px;
+}
+
+.cv-item h3 {
+    margin-bottom: 4px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #17243a;
+}
+
+.cv-institution {
+    font-weight: 700 !important;
+    color: #e10600 !important;
+}
+
+
+.cv-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.cv-skills span {
+    padding: 8px 15px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #17243a;
+    background: #f0f2f5;
+
+    border-left: 3px solid #e10600;
+}
+
+.cv-note {
+    margin-top: 12px;
+    font-size: 14px !important;
+    font-style: italic;
+    color: #6a7480 !important;
+}
+
+
+.cv-list {
+    padding-left: 22px;
+}
+
+.cv-list li {
+    margin-bottom: 7px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #3e4855;
+}
+
+
+.cv-footer {
+    margin-top: 35px;
+    padding-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    border-top: 1px solid #d8dce2;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #7b8490;
+}
+
+@media (max-width: 650px) {
+
+    .curriculo-body {
+        padding: 20px 10px;
+        background-attachment: scroll;
+    }
+
+    .curriculo-folha {
+        padding: 30px 22px;
+        min-height: auto;
+    }
+
+    .curriculo-actions {
+        flex-direction: column;
+    }
+
+    .cv-action {
+        width: 100%;
+    }
+
+    .cv-contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-footer {
+        flex-direction: column;
+    }
+
+}
+
+@page {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+
+    html,
+    body {
+        width: auto;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+
+        background: #ffffff !important;
+        color: #252d38 !important;
+    }
+
+    .curriculo-actions {
+        display: none !important;
+    }
+
+    .curriculo-folha {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+
+        margin: 0;
+        padding: 0;
+
+        background: #ffffff !important;
+
+        border: none;
+        box-shadow: none;
+    }
+
+    .cv-section,
+    .cv-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .cv-header {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .cv-contact-grid a {
+        color: #252d38 !important;
+    }
+
+}
